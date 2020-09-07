@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {Background, Foreground, CardContainer, Card, Header} from '../../components';
 import {cardBGs} from '../../assets';
-import {Salutation} from './content';
+import {Salutation, Biomarkers, AirQuality, Lifestyle, Health} from './content';
 
 const Dashboard =() => {
   const {cardBgPeople, cardBgPurple} = cardBGs;
@@ -10,8 +10,8 @@ const Dashboard =() => {
   <Fragment>
     <Header />
     <Background />
-    <Foreground>
-      <CardContainer height={30}>
+    <Foreground width={90}>
+      <CardContainer height={'10px'}>
       <Card 
           content={<Salutation title={"Hey Astel!"} subtitle={"See your STORIES RELEVANT INTERACTIONS"} />}
           width={20}
@@ -26,20 +26,33 @@ const Dashboard =() => {
           noBorder
           transparent/>
       </CardContainer>
-      <CardContainer height={30}>
-        <Card width={25}
-          header={'Air Quality'}
+
+      <CardContainer height={'250px'}>
+        <Card width={30}
+          header={AirQuality.header}
+          headerHeight={50}
+          noBorder
+          upperBorder
+          dontShowFooter
         />
         <Card 
-          header={'Biomarkers Priorities'}
-          width={40}/>
+          header={Biomarkers.header}
+          width={40}
+          noBorder/>
         <Card 
-          header={'Health Goals And Symptoms'}
-          width={15}/>
+          header={Health.header}
+          headerFontSize={10}
+          headerTextAlign={'center'}
+          content={Health.content}
+          contentHeight={50}
+          footer={Health.footer}
+          footerHeight={30}
+          width={16}/>
       </CardContainer>
-      <CardContainer height={30}>
+
+      <CardContainer height={'250px'}>
         <Card 
-          header={'Lifestyle'}
+          header={Lifestyle.header}
           width={35} height={100} background={cardBgPurple} noBorder/>
         <Card 
           header={'Score Nutrition'}

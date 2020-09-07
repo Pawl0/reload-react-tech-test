@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const Container = styled.div`
     width: ${props => props.width || 25}%;
-    height: ${props => props.height || 50}%;
-    padding: ${props=> props.paddingVertical || 3}% ${props=> props.paddingHorizontal || 2}%;
+    height: ${props => props.height || 100}%;
+    padding: ${props=> props.paddingVertical || 2}% ${props=> props.paddingHorizontal || 2}%;
     background: ${props => props.transparent ? 'transparent' : props.gradient 
         ? props.gradient : props.image 
         ? `url(${props.image})` : '#F7F8FB'};
@@ -27,6 +27,8 @@ const Header = styled.div`
     align-items: center;
     border-bottom: ${props => props.noBorder ? 0: 1}px solid #E0DBE880;
     padding-bottom: 16px;
+    font-size: ${props => props.headerFontSize || 16}px;
+    text-align: ${props => props.headerTextAlign};
 `;
 
 const Content = styled.div`
@@ -36,12 +38,16 @@ const Content = styled.div`
     flex-direction: ${props=> props.flexDirection || 'column'};
     justify-content: space-between;
     align-items: center;
+    font-size: ${props => props.contentFontSize || 16}px;
+    ${props => props.upperBorder && 'border-top: 1px solid #E0DBE880;'}
     `;
 
 const Footer = styled.div`
     width: 100%;
     height: ${props => props.height || 20}%;
-    border-top: ${props => props.noBorder ? 0: 1}px solid #E0DBE880;`;
+    border-top: ${props => props.noBorder ? 0: 1}px solid #E0DBE880;
+    font-size: ${props => props.footerFontSize || 16}px;
+    `;
 
 const Card = (props) => {
     const {header, 
@@ -51,12 +57,17 @@ const Card = (props) => {
         paddingHorizontal, 
         width, 
         height, 
-        headerHeight, 
+        headerHeight,
+        headerFontSize, 
+        headerTextAlign,
         contentHeight, 
+        contentFontSize,
         footerHeight,
+        footerFontSize,
         dontShowHeader,
         dontShowFooter,
         noBorder,
+        upperBorder,
         gradient,
         background,
         transparent,
@@ -71,13 +82,20 @@ const Card = (props) => {
             image={background}
             transparent={transparent}
             noBorder={noBorder}>
-            {!dontShowHeader && <Header id="header" height={headerHeight} noBorder={noBorder}>
+            {!dontShowHeader && <Header id="header" 
+                height={headerHeight} 
+                headerFontSize={headerFontSize} 
+                headerTextAlign={headerTextAlign}
+                noBorder={noBorder}>
                 {header}
             </Header>}
-            <Content id="content" height={contentHeight}>
+            <Content id="content" height={contentHeight} 
+            contentFontSize={contentFontSize}
+            upperBorder={upperBorder}
+            >
                 {content}
             </Content>
-            {!dontShowFooter && <Footer id="footer" height={footerHeight} noBorder={noBorder}>
+            {!dontShowFooter && <Footer id="footer" height={footerHeight} footerFontSize={footerFontSize} noBorder={noBorder}>
                 {footer}
             </Footer>}
         </Container>

@@ -12,16 +12,17 @@ const OuterDiv = styled.div`
 `;
 
 const InnerDiv = styled.div`
-    width: 80%;
-    height: 80%;
+    width: ${props => props.width || 80}%;
+    height: 120vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    margin-top: 15%;
 `;
 
 const Foreground = (props) => (<OuterDiv id="foreground">
-    <InnerDiv id="innerForeground">
+    <InnerDiv id="innerForeground" {...props}>
         {props.children}
     </InnerDiv>
 </OuterDiv>);
