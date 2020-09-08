@@ -4,5 +4,7 @@ import CardContainer from './CardContainer';
 import Card from './Card';
 import Header from './Header';
 import Button from './Button';
+import ProgressBar from './ProgressBar';
+import Emoji from './Emoji';
 
-export {Background, Foreground, CardContainer, Card, Header, Button};
+export {Background, Foreground, CardContainer, Card, Header, Button, ProgressBar, Emoji};

@@ -20,7 +20,7 @@ const Footer = styled.div`
 `;
 
 const Title = styled.h1`
-    font-size: 11px;
+    font-size: 12px;
 `;
 
 const Content = styled.div`
@@ -43,7 +43,7 @@ const PillContainer = styled.div`
     align-content: center;
     background: transparent;
     border: 1px solid #BABABA;
-    border-radius: 30%;
+    border-radius: 20px;
     margin: 8px 8px;
 `;
 

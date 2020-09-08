@@ -10,7 +10,7 @@ const Dashboard =() => {
   <Fragment>
     <Header />
     <Background />
-    <Foreground width={90}>
+    <Foreground width={80}>
       <CardContainer height={'10px'}>
       <Card 
           content={<Salutation title={"Hey Astel!"} subtitle={"See your STORIES RELEVANT INTERACTIONS"} />}
@@ -37,7 +37,10 @@ const Dashboard =() => {
         />
         <Card 
           header={Biomarkers.header}
+          content={Biomarkers.content}
           width={40}
+          contentHeight={75}
+          dontShowFooter
           noBorder/>
         <Card 
           header={Health.header}
@@ -50,10 +53,16 @@ const Dashboard =() => {
           width={16}/>
       </CardContainer>
 
-      <CardContainer height={'250px'}>
+      <CardContainer height={'300px'}>
         <Card 
           header={Lifestyle.header}
-          width={35} height={100} background={cardBgPurple} noBorder/>
+          headerFontSize={18}
+          width={35} height={100} background={cardBgPurple} noBorder
+          content={Lifestyle.content}
+          contentHeight={50}
+          footer={Lifestyle.footer}
+          footerHeight={25}
+          />
         <Card 
           header={'Score Nutrition'}
           width={55} height={100} background={cardBgPeople} noBorder/>

@@ -20,7 +20,7 @@ const SubHeader = styled.div`
 `;
 
 const Title = styled.h1`
-    font-size: 16px;
+    font-size: 18px;
 `;
 
 

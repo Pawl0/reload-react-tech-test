@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Button} from '../../../../components';
+import {Button, ProgressBar} from '../../../../components';
 
 const Header = styled.div`
     width: 100%;
@@ -11,9 +11,17 @@ const Header = styled.div`
 `;
 
 const Title = styled.h1`
-    font-size: 16px;
+    font-size: 18px;
 `;
 
+const Content = styled.div`
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+`;
 
 const BiomarkersHeader = (props) => {
 
@@ -23,6 +31,17 @@ const BiomarkersHeader = (props) => {
     </Header>
 };
 
-const Biomarkers = {header: <BiomarkersHeader />};
+const BiomarkersContent = (props) => {
+
+    return <Content id="BiomarkersContent">
+        <ProgressBar width={50} title={'digestion'}/>
+        <ProgressBar width={100} title={'energy'}/>
+        <ProgressBar width={100} title={'detox'}/>
+        <ProgressBar width={30} title={'messaging'}/>
+        <ProgressBar width={50} title={'antioxydant'}/>
+    </Content>
+};
+
+const Biomarkers = {header: <BiomarkersHeader />, content: <BiomarkersContent />};
 
 export default Biomarkers;

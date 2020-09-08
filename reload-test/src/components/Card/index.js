@@ -27,7 +27,7 @@ const Header = styled.div`
     align-items: center;
     border-bottom: ${props => props.noBorder ? 0: 1}px solid #E0DBE880;
     padding-bottom: 16px;
-    font-size: ${props => props.headerFontSize || 16}px;
+    font-size: ${props => props.headerFontSize || 18}px;
     text-align: ${props => props.headerTextAlign};
 `;
 
