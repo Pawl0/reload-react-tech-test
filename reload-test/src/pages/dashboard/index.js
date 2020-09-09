@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {Background, Foreground, CardContainer, Card, Header} from '../../components';
 import {cardBGs} from '../../assets';
-import {Salutation, Biomarkers, AirQuality, Lifestyle, Health} from './content';
+import {Salutation, Biomarkers, AirQuality, Lifestyle, Health, ScoreNutrition} from './content';
 
 const Dashboard =() => {
   const {cardBgPeople, cardBgPurple} = cardBGs;
@@ -64,7 +64,10 @@ const Dashboard =() => {
           footerHeight={25}
           />
         <Card 
-          header={'Score Nutrition'}
+          content={<ScoreNutrition score={75} label={"Score Nutrition"} lastMeal={"Salad Greek"} lastMealScore={15}/>}
+          dontShowHeader
+          dontShowFooter
+          contentHeight={100}
           width={55} height={100} background={cardBgPeople} noBorder/>
       </CardContainer>
     </Foreground>
