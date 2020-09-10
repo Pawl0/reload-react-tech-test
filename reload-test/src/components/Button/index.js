@@ -51,6 +51,14 @@ const AlignRight = styled.div`
         align-items: center; 
 `;
 
+
+const Icon = styled.img`
+    width: 8px;
+    height: 12px;
+    margin-right: 2px;
+`;
+
+
 const Button = (props) =>{
     const {label, 
             small, 
@@ -64,7 +72,8 @@ const Button = (props) =>{
             statusPercent,
             marginRight,
             width,
-            height} = props;
+            height,
+            icon} = props;
     return (
         <StyledButton id="button" small={small} 
             transparent={transparent} 
@@ -74,6 +83,7 @@ const Button = (props) =>{
             marginRight={marginRight}
             width={width}
             height={height}>
+            {icon && <Icon src={icon} />}
             <Label id="label" 
                 transparent={transparent} 
                 fontFontSize={fontFontSize} 

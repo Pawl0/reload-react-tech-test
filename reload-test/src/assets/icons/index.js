@@ -7,8 +7,12 @@ import nutritionMenuIcon from './nutrition_menu_icon.svg';
 import nutritionMenuIconSelected from './nutrition_menu_icon_selected.svg';
 import recomendationsMenuIcon from './recomendations_menu_icon.svg';
 import recomendationsMenuIconSelected from './recommendations_menu_icon_selected.svg';
+import drop from './drop.svg';
+import clock from './clock.svg';
+import next from './next.svg';
 
-const icons = {biomarkerMenuIcon,
+const icons = {
+    biomarkerMenuIcon,
     biomarkerMenuIconSelected,
     chatIcon,
     lifestyleMenuIcon,
@@ -16,11 +20,16 @@ const icons = {biomarkerMenuIcon,
     nutritionMenuIcon,
     nutritionMenuIconSelected,
     recomendationsMenuIcon,
-    recomendationsMenuIconSelected};
+    recomendationsMenuIconSelected,
+    drop,
+    clock,
+    next
+};
 
 export default icons;
 
-export {biomarkerMenuIcon,
+export {
+    biomarkerMenuIcon,
     biomarkerMenuIconSelected,
     chatIcon,
     lifestyleMenuIcon,
@@ -28,4 +37,8 @@ export {biomarkerMenuIcon,
     nutritionMenuIcon,
     nutritionMenuIconSelected,
     recomendationsMenuIcon,
-    recomendationsMenuIconSelected,};
+    recomendationsMenuIconSelected,
+    drop,
+    clock,
+    next
+};

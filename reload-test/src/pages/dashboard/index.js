@@ -1,17 +1,33 @@
 import React, {Fragment} from 'react';
 import {Background, Foreground, CardContainer, Card, Header} from '../../components';
-import {cardBGs} from '../../assets';
-import {Salutation, Biomarkers, AirQuality, Lifestyle, Health, ScoreNutrition} from './content';
+import {cardBGs, avatars} from '../../assets';
+import {
+  Salutation, 
+  Biomarkers, 
+  AirQuality, 
+  Lifestyle, 
+  Health,
+  ScoreNutrition,
+  Carousel
+} from './content';
 
 const Dashboard =() => {
   const {cardBgPeople, cardBgPurple} = cardBGs;
+
+  const runners = [
+                      {title: "Runner", time: "9h30", img: avatars.trainingAvatar}, 
+                      {title: "Runner", time: "9h30", img: avatars.trainingAvatar},
+                      {title: "Runner", time: "9h30", img: avatars.trainingAvatar}, 
+                      {title: "Runner", time: "9h30", img: avatars.trainingAvatar},
+                      {title: "Runner", time: "9h30", img: avatars.trainingAvatar},
+                    ];
 
   return (
   <Fragment>
     <Header />
     <Background />
     <Foreground width={80}>
-      <CardContainer height={'10px'}>
+      <CardContainer height={'20%'}>
       <Card 
           content={<Salutation title={"Hey Astel!"} subtitle={"See your STORIES RELEVANT INTERACTIONS"} />}
           width={20}
@@ -20,7 +36,10 @@ const Dashboard =() => {
           noBorder
           transparent
         />
-        <Card width={70}
+        <Card 
+          content={<Carousel runners={runners} />}
+          contentHeight={100}
+          width={70}
           dontShowHeader
           dontShowFooter
           noBorder

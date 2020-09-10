@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Button, ScoreWheel} from '../../../../components';
+import { drop } from '../../../../assets/icons';
 
 const Header = styled.div`
     width: ${props => props.width || 100}%;
@@ -35,15 +36,14 @@ const Content = styled.div`
     overflow: hidden;
 `;
 
-
 const AirQualityHeader = () => {
 
     return <Header id="AirQualityHeader">
         <Title id="title">Air Quality</Title>
         <SubHeader id="headerSubheader">
-            <Button  label={"Very Good"} small/>
-            <Button  label={"480 CO2"} small transparent/>
-            <Button  label={"55%"} small transparent/>
+            <Button label={"Very Good"} small/>
+            <Button label={"480 CO2"} small transparent/>
+            <Button icon={drop} label={"55%"} small transparent/>
         </SubHeader>
     </Header>
 };
