@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledButton = styled.div`
-width: ${props => props.lifestyle ? 100 : window.innerWidth >= 1280 ? props.small ? 20 : 
+width: ${props => props.width ? props.width : props.lifestyle ? 100 : window.innerWidth >= 1280 ? props.small ? 20 : 
     props.report ? 80 
     : 50 
     : props.small ? 30
     : props.report ? 80 
     : 70}%;
-height: ${props => props.report ? 65 : 60}%;
+height: ${props => props.height ? props.height :  props.report ? 65 : 60}%;
 background: ${props => props.transparent ? 'transparent': props.background ||  
 'linear-gradient(79deg, #15D4D8 0%, #15D8BD 100%)'};
 border: 1px solid #E0DBE880;
@@ -17,6 +17,7 @@ display: flex;
 justify-content: ${props => props.lifestyle ? 'space-between' : 'center'};
 align-items: center;
 padding: 8px 16px;
+margin-right: ${props => props.marginRight}px;
 :hover {
     cursor: pointer;
 }
@@ -50,12 +51,29 @@ const AlignRight = styled.div`
         align-items: center; 
 `;
 
-const Button = ({label, small, transparent, fontFontSize, report, background, color, lifestyle, status, statusPercent}) =>(
-    <StyledButton id="button" small={small} 
-        transparent={transparent} 
-        report={report}
-        background={background}
-        lifestyle={lifestyle}>
+const Button = (props) =>{
+    const {label, 
+            small, 
+            transparent, 
+            fontFontSize, 
+            report, 
+            background, 
+            color, 
+            lifestyle, 
+            status, 
+            statusPercent,
+            marginRight,
+            width,
+            height} = props;
+    return (
+        <StyledButton id="button" small={small} 
+            transparent={transparent} 
+            report={report}
+            background={background}
+            lifestyle={lifestyle}
+            marginRight={marginRight}
+            width={width}
+            height={height}>
             <Label id="label" 
                 transparent={transparent} 
                 fontFontSize={fontFontSize} 
@@ -73,6 +91,6 @@ const Button = ({label, small, transparent, fontFontSize, report, background, co
                 </Status>
             </AlignRight>}
         </StyledButton>
-);
-
+    );
+};
 export default Button;

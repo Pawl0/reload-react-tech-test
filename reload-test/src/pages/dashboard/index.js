@@ -31,6 +31,7 @@ const Dashboard =() => {
         <Card width={30}
           header={AirQuality.header}
           headerHeight={50}
+          content={AirQuality.content}
           noBorder
           upperBorder
           dontShowFooter
